@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnOneB = new System.Windows.Forms.Button();
-            this.btnTwoB = new System.Windows.Forms.Button();
-            this.btnThreeB = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.checkBoxgreen = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxButton = new System.Windows.Forms.ComboBox();
             this.labelColour = new System.Windows.Forms.Label();
             this.groupBoxCheckColour = new System.Windows.Forms.GroupBox();
             this.checkBoxwhite = new System.Windows.Forms.CheckBox();
@@ -45,49 +42,14 @@
             this.checkBoxIcon3 = new System.Windows.Forms.CheckBox();
             this.checkBoxIcon2 = new System.Windows.Forms.CheckBox();
             this.checkBoxIcon1 = new System.Windows.Forms.CheckBox();
+            this.listBoxIcon = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
+            this.buttonMB = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxCheckColour.SuspendLayout();
             this.groupBoxIcon.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnOneB
-            // 
-            this.btnOneB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOneB.Location = new System.Drawing.Point(33, 28);
-            this.btnOneB.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOneB.Name = "btnOneB";
-            this.btnOneB.Size = new System.Drawing.Size(197, 80);
-            this.btnOneB.TabIndex = 0;
-            this.btnOneB.Text = "1 кнопка";
-            this.btnOneB.UseVisualStyleBackColor = true;
-            this.btnOneB.Click += new System.EventHandler(this.btnOneB_Click);
-            this.btnOneB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOneB_MouseClick);
-            // 
-            // btnTwoB
-            // 
-            this.btnTwoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnTwoB.Location = new System.Drawing.Point(307, 28);
-            this.btnTwoB.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTwoB.Name = "btnTwoB";
-            this.btnTwoB.Size = new System.Drawing.Size(197, 80);
-            this.btnTwoB.TabIndex = 0;
-            this.btnTwoB.Text = "2 кнопки";
-            this.btnTwoB.UseVisualStyleBackColor = true;
-            this.btnTwoB.Click += new System.EventHandler(this.btnTwoB_Click);
-            this.btnTwoB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnTwoB_MouseClick);
-            this.btnTwoB.MouseLeave += new System.EventHandler(this.btnTwoB_MouseLeave);
-            this.btnTwoB.MouseHover += new System.EventHandler(this.btnTwoB_MouseHover);
-            // 
-            // btnThreeB
-            // 
-            this.btnThreeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnThreeB.Location = new System.Drawing.Point(589, 28);
-            this.btnThreeB.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThreeB.Name = "btnThreeB";
-            this.btnThreeB.Size = new System.Drawing.Size(197, 80);
-            this.btnThreeB.TabIndex = 0;
-            this.btnThreeB.Text = "3 кнопки";
-            this.btnThreeB.UseVisualStyleBackColor = true;
-            this.btnThreeB.Click += new System.EventHandler(this.btnThreeB_Click);
             // 
             // timer1
             // 
@@ -107,23 +69,31 @@
             this.checkBoxgreen.UseVisualStyleBackColor = true;
             this.checkBoxgreen.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
-            // comboBox1
+            // comboBoxButton
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(327, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(357, 24);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxButton.FormattingEnabled = true;
+            this.comboBoxButton.Items.AddRange(new object[] {
+            "OK",
+            "OKCancel",
+            "RetryCancel",
+            "YesNo",
+            "YesNoCancel"});
+            this.comboBoxButton.Location = new System.Drawing.Point(449, 149);
+            this.comboBoxButton.Name = "comboBoxButton";
+            this.comboBoxButton.Size = new System.Drawing.Size(225, 33);
+            this.comboBoxButton.TabIndex = 5;
+            this.comboBoxButton.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // labelColour
             // 
             this.labelColour.AutoSize = true;
-            this.labelColour.Location = new System.Drawing.Point(324, 150);
+            this.labelColour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelColour.Location = new System.Drawing.Point(444, 118);
             this.labelColour.Name = "labelColour";
-            this.labelColour.Size = new System.Drawing.Size(353, 16);
+            this.labelColour.Size = new System.Drawing.Size(228, 25);
             this.labelColour.TabIndex = 6;
-            this.labelColour.Text = "Выбрать сообщение, которое будет выведено в окне";
+            this.labelColour.Text = "Выберите кнопку MBox";
             this.labelColour.Click += new System.EventHandler(this.labelColour_Click);
             // 
             // groupBoxCheckColour
@@ -132,7 +102,7 @@
             this.groupBoxCheckColour.Controls.Add(this.checkBoxred);
             this.groupBoxCheckColour.Controls.Add(this.checkBoxgreen);
             this.groupBoxCheckColour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxCheckColour.Location = new System.Drawing.Point(651, 266);
+            this.groupBoxCheckColour.Location = new System.Drawing.Point(12, 244);
             this.groupBoxCheckColour.Name = "groupBoxCheckColour";
             this.groupBoxCheckColour.Size = new System.Drawing.Size(241, 164);
             this.groupBoxCheckColour.TabIndex = 7;
@@ -177,9 +147,9 @@
             this.groupBoxIcon.Controls.Add(this.checkBoxIcon2);
             this.groupBoxIcon.Controls.Add(this.checkBoxIcon1);
             this.groupBoxIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxIcon.Location = new System.Drawing.Point(33, 176);
+            this.groupBoxIcon.Location = new System.Drawing.Point(12, 12);
             this.groupBoxIcon.Name = "groupBoxIcon";
-            this.groupBoxIcon.Size = new System.Drawing.Size(237, 231);
+            this.groupBoxIcon.Size = new System.Drawing.Size(237, 190);
             this.groupBoxIcon.TabIndex = 8;
             this.groupBoxIcon.TabStop = false;
             this.groupBoxIcon.Text = "Выберите значок";
@@ -221,18 +191,81 @@
             this.checkBoxIcon1.UseVisualStyleBackColor = true;
             this.checkBoxIcon1.CheckedChanged += new System.EventHandler(this.checkBoxIcon1_CheckedChanged);
             // 
+            // listBoxIcon
+            // 
+            this.listBoxIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxIcon.FormattingEnabled = true;
+            this.listBoxIcon.ItemHeight = 20;
+            this.listBoxIcon.Items.AddRange(new object[] {
+            "предупреждение",
+            "стоп",
+            "вопрос",
+            "информация"});
+            this.listBoxIcon.Location = new System.Drawing.Point(449, 260);
+            this.listBoxIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxIcon.Name = "listBoxIcon";
+            this.listBoxIcon.Size = new System.Drawing.Size(225, 104);
+            this.listBoxIcon.TabIndex = 9;
+            this.listBoxIcon.SelectedIndexChanged += new System.EventHandler(this.listBoxIcon_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(444, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(255, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Выберите иконки в MsBox";
+            // 
+            // textBoxInput
+            // 
+            this.textBoxInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInput.Location = new System.Drawing.Point(449, 45);
+            this.textBoxInput.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(225, 30);
+            this.textBoxInput.TabIndex = 11;
+            this.textBoxInput.TextChanged += new System.EventHandler(this.textBoxInput_TextChanged);
+            // 
+            // buttonMB
+            // 
+            this.buttonMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMB.Location = new System.Drawing.Point(789, 395);
+            this.buttonMB.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMB.Name = "buttonMB";
+            this.buttonMB.Size = new System.Drawing.Size(164, 35);
+            this.buttonMB.TabIndex = 12;
+            this.buttonMB.Text = "Результат";
+            this.buttonMB.UseVisualStyleBackColor = true;
+            this.buttonMB.Click += new System.EventHandler(this.buttonMB_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(444, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Введите текст";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 453);
+            this.ClientSize = new System.Drawing.Size(1032, 453);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonMB);
+            this.Controls.Add(this.textBoxInput);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.listBoxIcon);
             this.Controls.Add(this.groupBoxIcon);
             this.Controls.Add(this.groupBoxCheckColour);
             this.Controls.Add(this.labelColour);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnThreeB);
-            this.Controls.Add(this.btnTwoB);
-            this.Controls.Add(this.btnOneB);
+            this.Controls.Add(this.comboBoxButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -248,13 +281,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnOneB;
-        private System.Windows.Forms.Button btnTwoB;
-        private System.Windows.Forms.Button btnThreeB;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox checkBoxgreen;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxButton;
         private System.Windows.Forms.Label labelColour;
         private System.Windows.Forms.GroupBox groupBoxCheckColour;
         private System.Windows.Forms.CheckBox checkBoxred;
@@ -264,6 +293,11 @@
         private System.Windows.Forms.CheckBox checkBoxIcon3;
         private System.Windows.Forms.CheckBox checkBoxIcon2;
         private System.Windows.Forms.CheckBox checkBoxIcon1;
+        private System.Windows.Forms.ListBox listBoxIcon;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxInput;
+        private System.Windows.Forms.Button buttonMB;
+        private System.Windows.Forms.Label label1;
         //        groupBox = new System.Windows.Forms.GroupBox();
         //checkBoxgreen = new System.Windows.Forms.CheckBox();
         //checkBoxred = new System.Windows.Forms.CheckBox();

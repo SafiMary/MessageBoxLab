@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 //using static System.Net.Mime.MediaTypeNames;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
@@ -21,25 +22,22 @@ namespace MessageBoxLab
     {
         int t = 0;
         string title = string.Empty;
-       
+        MessageBoxButtons _buttons;
+        MessageBoxIcon icon;
         public Form1()
         {
             InitializeComponent();
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBoxButton.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             
 
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(new string[] { "Сегодня понедельник", "Сегодня пятница", "Сегодня выходной" });
+    
             timer1.Interval = 3000;
             timer1.Tick += new EventHandler(timer1_Tick);
         }
 
-        private void btnOneB_MouseClick(object sender, MouseEventArgs e)
-        {
-           
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -64,28 +62,8 @@ namespace MessageBoxLab
 
             }
 
-        private void btnTwoB_MouseHover(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnTwoB_MouseLeave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnTwoB_MouseClick(object sender, MouseEventArgs e)
-        {
-          
-          
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedState = comboBox1.SelectedItem.ToString();
-            MessageBox.Show(selectedState);
-        }
-        
+   
+       
         private void labelColour_Click(object sender, EventArgs e)
         {
 
@@ -135,24 +113,48 @@ namespace MessageBoxLab
             Icon = Icon.FromHandle(((Bitmap)imageListIcon.Images[2]).GetHicon());
         }
 
-        private void btnOneB_Click(object sender, EventArgs e)
-        {
-            var text = "Одна кнопка";
-            MessageBox.Show(text);
-        }
-
-        private void btnTwoB_Click(object sender, EventArgs e)
-        {
-            var text = "Две кнопки";
-            MessageBox.Show(text);
-        }
-
-        private void btnThreeB_Click(object sender, EventArgs e)
-        {
-            var text = "Три кнопки";
-            MessageBox.Show(text);
-        }
-
        
+        private void textBoxInput_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void SelectedIcon(string item)
+        {
+            switch (item)
+            {
+                case "предупреждение": icon = MessageBoxIcon.Warning; break;
+                case "стоп": icon = MessageBoxIcon.Stop; break;
+                case "запрос": icon = MessageBoxIcon.Question; break;
+                case "информация": icon = MessageBoxIcon.Information; break;
+                default: icon = MessageBoxIcon.None; break;
+            }
+        }
+        private void listBoxIcon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedIcon(listBoxIcon.SelectedItem.ToString());
+        }
+        private void SelectedButtons(string item)
+        {
+            switch (item)
+            {
+                case "AbortRetryIgnore": _buttons = MessageBoxButtons.AbortRetryIgnore; break;
+                case "OK": _buttons = MessageBoxButtons.OK; break;
+                case "OKCancel": _buttons = MessageBoxButtons.OKCancel; break;
+                case "RetryCancel": _buttons = MessageBoxButtons.RetryCancel; break;
+                case "YesNo": _buttons = MessageBoxButtons.YesNo; break;
+                case "YesNoCancel": _buttons = MessageBoxButtons.YesNoCancel; break;
+                default: _buttons = MessageBoxButtons.OK; break;
+            }
+
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedButtons(comboBoxButton.SelectedItem.ToString());
+        }
+
+        private void buttonMB_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(textBoxInput.Text, "Message Box", _buttons, icon);
+        }
     }
 }
